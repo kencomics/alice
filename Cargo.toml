@@ -4,6 +4,15 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-inkwell = { version = "0.5.0", features = ["llvm18-0-prefer-dynamic"] }
+cranelift = "0.118.0"
+cranelift-codegen = "0.118.0"
+cranelift-frontend = "0.118.0"
+cranelift-module = "0.118.0"
+nom = "8.0.0"
+target-lexicon = "0.13.2"
 
+[unstable]
+codegen-backend = true
 
+[profile.dev]
+codegen-backend = "cranelift"
